@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: hsl(204, 43%, 93%);
+}
+/*  */
+
+.grid-container {
+  align-self: center;
+  min-height: 75vh;
+  width: 50%;
+  /* border: solid 2px red; */
+  border-radius: 1em;
+
+  display: grid;
+  /* grid-template-columns: 100%; */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 43% 57%;
+  grid-template-areas:
+    "m m"
+    "s w";
+}
+
+.items {
+  padding: 40px;
+}
+
+.main {
+  grid-area: m;
+  background-color: white;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.subscription {
+  grid-area: s;
+  background-color: hsl(179, 62%, 43%);
+  border-radius: 0 0 0 0.5em;
+  color: hsl(204, 43%, 93%);
+}
+
+.why-us {
+  grid-area: w;
+  background-color: hsl(179, 49%, 57%);
+  /* hsl(179, 56%, 61%) */
+  border-radius: 0 0 0.5em 0;
+  color: hsl(204, 43%, 93%);
+}
+
+.heading-1 {
+  color: hsl(179, 62%, 43%);
+  padding-bottom: 1.3em;
+}
+
+.heading-2 {
+  color: hsl(71, 73%, 54%);
+  padding-bottom: 1em;
+}
+
+.write-up {
+  line-height: 1.7em;
+  color: hsl(218, 22%, 67%);
+  font-size: 16px;
+}
+
+.heading-3 {
+  padding-bottom: 1.3em;
+}
+
+.money {
+  font-size: 35px;
+  vertical-align: -0.15em;
+}
+
+.per-month {
+  opacity: 50%;
+  padding-left: 0.7em;
+}
+
+.write-up-subscription {
+  padding-top: 0.7em;
+  padding-bottom: 2.5em;
+}
+
+.sign-up {
+  display: block;
+  text-align: center;
+  border-radius: 0.5em;
+  padding: 1em 0;
+  font-weight: 700;
+  text-decoration: none;
+  color: hsl(204, 43%, 93%);
+  background-color: hsl(71, 73%, 54%);
+  box-shadow: 0px 7px 10px hsl(179, 64%, 32%);
+}
+
+.write-up-why-us {
+  line-height: 1.5em;
+  color: hsl(204, 43%, 93%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 900px) {
+  .grid-container {
+    width: 70%;
+    grid-template:
+      "m" 1fr
+      "s" 1fr
+      "w" 1fr;
+  }
+
+  .items {
+    padding: 30px;
+  }
+
+  .subscription {
+    border-radius: 0;
+    padding-bottom: 0;
+  }
+
+  .why-us {
+    border-radius: 0 0 0.5em 0.5em;
+    padding-bottom: 0;
+  }
+}
